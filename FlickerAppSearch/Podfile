@@ -1,0 +1,18 @@
+platform :ios, '13.0'
+
+target 'FlickerAppSearch' do
+  use_frameworks!
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Kingfisher'
+
+  target 'FlickerAppSearchTests' do
+    inherit! :search_paths
+  pod 'RxTest'
+  end
+
+  target 'FlickerAppSearchUITests' do
+    # Pods for testing
+  end
+
+end
