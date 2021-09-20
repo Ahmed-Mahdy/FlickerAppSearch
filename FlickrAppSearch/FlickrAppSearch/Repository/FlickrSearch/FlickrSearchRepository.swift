@@ -11,10 +11,11 @@ import Moya
 
 class FlickrSearchRepository: Repository {
     var cachingPolicy: CachingPolicy
-    var provider = MoyaProvider<FlickrTarget>(plugins: [ NetworkLoggerPlugin() ])
+    var provider: MoyaProvider<FlickrTarget>
     
-    public init(cachingPolicy: CachingPolicy = .NetworkOnly) {
+    public init(provider: MoyaProvider<FlickrTarget> = MoyaProvider<FlickrTarget>(plugins: [ NetworkLoggerPlugin() ]), cachingPolicy: CachingPolicy = .NetworkOnly) {
         self.cachingPolicy = cachingPolicy
+        self.provider = provider
     }
     func search(keyword: String, page: Int) -> Observable<FlickrSearchResults> {
         return getData(.search(keyword: keyword, page: page), decodingType: FlickrSearchResults.self)

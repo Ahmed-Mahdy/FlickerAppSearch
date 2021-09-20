@@ -37,7 +37,16 @@ extension FlickrTarget: TargetType {
     }
     
     public var sampleData: Data {
-        return Data() // we only return Data() here as a fake response, it has to be changed for Unit Testing.
+        if let path = Bundle.main.path(forResource: "ImageResultMock", ofType: "json") {
+            do {
+                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                return data
+              } catch {
+                   // handle error
+                return Data()
+              }
+        }
+        return Data()
     }
     
     public var task: Task {
