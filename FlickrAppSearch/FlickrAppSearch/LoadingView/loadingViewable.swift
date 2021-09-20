@@ -19,7 +19,7 @@ extension loadingViewable where Self: UIViewController {
             if Self.animationView == nil {
                 Self.animationView = .init(name: "speedi_loader")
                 
-                Self.containerView.backgroundColor = UIColor(red: 134/255, green: 1, blue: 1, alpha: 1)
+                Self.containerView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.55)
                 Self.animationView!.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
                 Self.animationView!.center = Self.containerView.center
                 // 3. Set animation content mode
