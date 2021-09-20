@@ -7,19 +7,11 @@
 
 import Foundation
 
-struct FlickrPhoto: Codable {
-
-    let farm : Int
-    let id : String
-
-    let isfamily : Int
-    let isfriend : Int
-    let ispublic : Int
-
-    let owner: String
-    let secret : String
-    let server : String
+struct Photo: Codable {
+    let id, owner, secret, server: String
+    let farm: Int
     let title: String
+    let ispublic, isfriend, isfamily: Int
 
     var imageURL: String {
         let urlString = String(format: FlickrTarget.imageURL, farm, server, id, secret)

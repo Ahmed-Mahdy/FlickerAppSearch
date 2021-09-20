@@ -6,6 +6,7 @@ target 'FlickrAppSearch' do
   pod 'Moya/RxSwift'
   pod 'RxCocoa'
   pod 'Kingfisher'
+  pod 'lottie-ios'
   # Pods for FlickrAppSearch
 
   target 'FlickrAppSearchTests' do

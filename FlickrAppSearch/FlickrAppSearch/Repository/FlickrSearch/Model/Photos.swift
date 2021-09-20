@@ -8,9 +8,6 @@
 import Foundation
 
 struct Photos: Codable {
-    let page: Int
-    let pages: Int
-    let perpage: Int
-    let photo: [FlickrPhoto]
-    let total: String
+    let page, pages, perpage, total: Int
+    let photo: [Photo]
 }

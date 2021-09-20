@@ -25,7 +25,7 @@ extension Repository {
                 } onFailure: { (error) in
                     if let moyaError = error as? MoyaError {
                         let code = moyaError.response?.statusCode
-                        let error = NutritionException(code: code, message: moyaError.errorDescription, title: "Error")
+                        let error = FlickrException(code: code, message: moyaError.errorDescription, title: "Error")
                         observer.onError(error)
                     } else {
                         // Error is not moya Error
@@ -55,7 +55,7 @@ enum CachingPolicy {
     case Offline
 }
 
-struct NutritionException: Error {
+struct FlickrException: Error {
     let code: Int?
     let message: String?
     let title: String?
