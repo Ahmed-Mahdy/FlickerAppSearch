@@ -1,0 +1,21 @@
+platform :ios, '13.0'
+
+target 'FlickrAppSearch' do
+  use_frameworks!
+  pod 'Moya'
+  pod 'Moya/RxSwift'
+  pod 'RxCocoa'
+  pod 'Kingfisher'
+  pod 'lottie-ios'
+  # Pods for FlickrAppSearch
+
+  target 'FlickrAppSearchTests' do
+    inherit! :search_paths
+  pod 'RxTest'
+  end
+
+  target 'FlickrAppSearchUITests' do
+    # Pods for testing
+  end
+
+end
